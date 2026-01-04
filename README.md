@@ -1,1 +1,1 @@
-# CropIQ
+# CropIQ core 
