@@ -1,1 +1,1 @@
-# CropIQ core 
+# CropIQ core fun
