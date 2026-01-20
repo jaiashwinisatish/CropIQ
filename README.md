@@ -1,5 +1,3 @@
-updated
-
 # 🌾 CropIQ
 
 
