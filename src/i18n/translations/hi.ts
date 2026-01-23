@@ -42,7 +42,7 @@ export default {
   market: 'बाजार',
   
   // Landing Page
-  heroTitle: 'बिना हार्डवेयर के स्मार्ट खेती',
+  heroTitle: 'AI के साथ स्मार्ट खेती, कोई हार्डवेयर नहीं चाहिए',
   heroSubtitle: 'सैटेलाइट डेटा, मौसम जानकारी और बाजार के रुझान का उपयोग करके AI-संचालित फसल सलाह प्राप्त करें। कोई सेंसर नहीं चाहिए।',
   getStartedNow: 'अभी शुरू करें',
   learnMoreBtn: 'और जानें',
@@ -76,7 +76,6 @@ export default {
   takeAction: 'कार्रवाई करें',
   dismiss: 'खारिज करें',
   acknowledge: 'स्वीकार करें',
-  learnMoreBtn: 'और जानें',
   addNew: 'नया जोड़ें',
   update: 'अपडेट करें',
   remove: 'हटाएं',

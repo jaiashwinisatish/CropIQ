@@ -42,7 +42,7 @@ export default {
   market: 'বাজার',
   
   // Landing Page
-  heroTitle: 'হার্ডওয়ার ছাড়াই স্মার্ট কৃষি',
+  heroTitle: 'AI দিয়ে স্মার্ট চাষ, কোনো হার্ডওয়্যার লাগবে না',
   heroSubtitle: 'স্যাটেলাইট ডেটা, আবহাওয়া বুদ্ধিমত্তা এবং বাজারের রুঝানের ব্যবহারত এআই-চালিত ফসল পরামর্শ পান। কোনো সেন্সর প্রয়োজন নেই।',
   getStartedNow: 'এখনই শুরু করুন',
   learnMoreBtn: 'আরও জানুন',
@@ -75,7 +75,6 @@ export default {
   takeAction: 'কার্যবাহির করুন',
   dismiss: 'খারিজ করুন',
   acknowledge: 'স্বীকৃতি করুন',
-  learnMoreBtn: 'আরও জানুন',
   addNew: 'নতুন যোগ করুন',
   update: 'আপডেট করুন',
   remove: 'মুছে ফেলুন',

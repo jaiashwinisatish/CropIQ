@@ -42,7 +42,7 @@ export default {
   market: 'બજાર',
   
   // Landing Page
-  heroTitle: 'હાર્ડવેર વગર સ્માર્ટ ખેતી',
+  heroTitle: 'AI સાથે સ્માર્ટ ખેતી, કોઈ હાર્ડવેર જરૂરી નથી',
   heroSubtitle: 'સેટેલાઇટ ડેટા, હવામાન બુદ્ધિમત્તા અને બજાર વલણના ઉપયોગથી AI-સંચાલિત પાક સલાહ મેળવો. કોઈ સેન્સરની જરૂર નથી.',
   getStartedNow: 'હવે શરૂ કરો',
   learnMoreBtn: 'વધુ જાણો',
@@ -71,11 +71,10 @@ export default {
   overview: 'સમીક્ષણ',
   
   // Actions
-  viewAll: 'બધુ જુઓ',
+  viewAll: 'બધુ જોઓ',
   takeAction: 'કાર્યવાહી કરો',
   dismiss: 'રદ કરો',
   acknowledge: 'સ્વીકારો',
-  learnMoreBtn: 'વધુ જાણો',
   addNew: 'નવું ઉમેરો',
   update: 'અપડેટ કરો',
   remove: 'દૂર કરો',

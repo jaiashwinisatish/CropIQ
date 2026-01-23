@@ -42,7 +42,7 @@ export default {
   market: 'Market',
   
   // Landing Page
-  heroTitle: 'Smart Farming Without Hardware',
+  heroTitle: 'Farm Smarter with AI, No Hardware Required',
   heroSubtitle: 'Get AI-powered crop advice using satellite data, weather intelligence & market trends. No sensors needed.',
   getStartedNow: 'Get Started Now',
   learnMoreBtn: 'Learn More',
@@ -76,7 +76,6 @@ export default {
   takeAction: 'Take Action',
   dismiss: 'Dismiss',
   acknowledge: 'Acknowledge',
-  learnMoreBtn: 'Learn More',
   addNew: 'Add New',
   update: 'Update',
   remove: 'Remove',
