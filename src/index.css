@@ -343,6 +343,14 @@
   .water-ripple {
     animation: water-ripple 3s ease-out infinite;
   }
+  
+  .bird-fly {
+    animation: bird-fly 8s linear infinite;
+  }
+  
+  .bird-glide {
+    animation: bird-glide 12s ease-in-out infinite;
+  }
 }
 
 /* Enhanced Keyframes for Farm Animations */
@@ -432,14 +440,33 @@
     opacity: 0;
   }
   10% {
-    opacity: 1;
+    opacity: 0.7;
   }
   90% {
-    opacity: 1;
+    opacity: 0.7;
   }
   100% {
     transform: translateX(calc(100vw + 100px)) translateY(-20px);
     opacity: 0;
+  }
+}
+
+@keyframes bird-glide {
+  0%, 100% { 
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% { 
+    transform: translateX(30vw) translateY(-10px) rotate(-5deg);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateX(60vw) translateY(5px) rotate(0deg);
+    opacity: 0.7;
+  }
+  75% { 
+    transform: translateX(90vw) translateY(-5px) rotate(5deg);
+    opacity: 0.8;
   }
 }
 

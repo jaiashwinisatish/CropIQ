@@ -5,13 +5,16 @@ import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import FarmBackground from '@/components/animations/FarmBackground';
 import FloatingElements from '@/components/animations/FloatingElements';
-import WheatField from '@/components/animations/WheatField';
+import VisibleBirds from '@/components/animations/VisibleBirds';
 
 const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Flying Birds Animation */}
+      <VisibleBirds />
+      
       {/* Animated Background Canvas */}
       <FarmBackground />
       
@@ -142,6 +145,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6, type: "spring" }}
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6"
           >
+            
+
             {t('heroTitle').split(' ').map((word, index) => (
               <motion.span
                 key={index}
@@ -152,15 +157,18 @@ const HeroSection = () => {
                   delay: index * 0.1,
                   type: "spring"
                 }}
-                className={index === 1 ? "text-gradient-primary inline-block" : "inline-block"}
+                className={index === 1 ? "text-gradient-primary inline-block mr-1" : "inline-block mr-1"}
                 whileHover={{ 
                   scale: 1.1,
                   color: index === 1 ? undefined : "hsl(var(--primary))"
                 }}
               >
-                {word}{' '}
+                {word}
+
               </motion.span>
             ))}
+
+            
           </motion.h1>
 
           {/* Enhanced Subtitle with typewriter effect */}
@@ -268,9 +276,6 @@ const HeroSection = () => {
           />
         </svg>
       </motion.div>
-
-      {/* Wheat Field Animation */}
-      <WheatField />
     </section>
   );
 };
