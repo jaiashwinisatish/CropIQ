@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropIQ - Language Test</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/i18next@23.8.20/i18next.min.js"></script>
+    <script src="https://unpkg.com/react-i18next@13.5.0/react-i18next.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .language-selector {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        .translation-test {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .translation-test p {
+            margin: 5px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .current-lang {
+            background: #e8f4f8;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .success {
+            background: #28a745;
+            color: white;
+        }
+        .error {
+            background: #dc35445;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Initialize i18n
+        i18n
+            .init({
+                resources: {
+                    en: {
+                        translation: {
+                            appName: 'CropIQ',
+                            tagline: 'AI-Powered Smart Farming',
+                            getStarted: 'Get Started Free',
+                            login: 'Login',
+                            dashboard: 'Dashboard',
+                            about: 'About',
+                            heroTitle: 'Smart Farming Without Hardware',
+                            heroSubtitle: 'Get AI-powered crop advice using satellite data, weather intelligence & market trends. No sensors needed.',
+                            weatherInfo: 'Weather',
+                            alerts: 'Alerts',
+                            success: 'Success',
+                            error: 'Error',
+                            loading: 'Loading...',
+                            save: 'Save',
+                            cancel: 'Cancel'
+                        }
+                    },
+                    hi: {
+                        translation: {
+                            appName: 'क्रॉपआईक्यू',
+                            tagline: 'AI-संचालित स्मार्ट खेती',
+                            getStarted: 'मुफ्त शुरू करें',
+                            login: 'लॉग इन',
+                            dashboard: 'डैशबोर्ड',
+                            about: 'हमारे बारे में',
+                            heroTitle: 'बिना हार्डवेयर स्मार्ट खेती',
+                            heroSubtitle: 'सैटेलाइट डेटा, मौसम जानकारी और बाजार के रुझान का उपयोगी. कोई सेंसर नहीं चाहिए.',
+                            weatherInfo: 'मौसम',
+                            alerts: 'अलर्ट',
+                            success: 'सफलता',
+                            error: 'लॉप',
+                            loading: 'लोड हो रहा है...',
+                            save: 'सेव करें',
+                            cancel: 'रद्द करें'
+                        }
+                    }
+                },
+                lng: 'en', // Start with English
+                fallbackLng: 'en',
+                interpolation: {
+                    escapeValue: false,
+                },
+                debug: true,
+            });
+
+        // Create React component
+        const { useState } = React;
+        const { useTranslation } = React.useTranslation;
+
+        const App = () => {
+            const { t } = useTranslation();
+            const [currentLang, setCurrentLang] = useState(i18n.language);
+
+            const changeLanguage = (lang) => {
+                i18n.changeLanguage(lang);
+                setCurrentLang(lang);
+            };
+
+            return React.createElement('div', null,
+                React.createElement('div', { className: 'test-container' },
+                    React.createElement('div', { className: 'current-lang' },
+                        `Current Language: ${currentLang} (${i18n.language})`
+                    ),
+                    React.createElement('div', { className: 'language-selector' },
+                        Object.keys(i18n.options.resources).map(lang => (
+                            React.createElement('button', {
+                                key: lang,
+                                onClick: () => changeLanguage(lang),
+                                style: {
+                                    marginRight: '10px',
+                                    padding: '8px 16px',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '4px',
+                                    backgroundColor: currentLang === lang ? '#007bff' : '#f8f9fa',
+                                    color: currentLang === lang ? 'white' : '#333'
+                                }
+                            }, lang.toUpperCase())
+                        ))
+                    ),
+                    React.createElement('div', { className: 'translation-test' },
+                        React.createElement('p', null, `App Name: ${t('appName')}`),
+                        React.createElement('p', null, `Tagline: ${t('tagline')}`),
+                        React.createElement('p', null, `Get Started: ${t('getStarted')}`),
+                        React.createElement('p', null, `Login: ${t('login')}`),
+                        React.createElement('p', null, `Dashboard: ${t('dashboard')}`),
+                        React.createElement('p', null, `About: ${t('about')}`),
+                        React.createElement('p', null, `Hero Title: ${t('heroTitle')}`),
+                        React.createElement('p', null, `Hero Subtitle: ${t('heroSubtitle')}`),
+                        React.createElement('p', null, `Weather: ${t('weatherInfo')}`),
+                        React.createElement('p', null, `Alerts: ${t('alerts')}`),
+                        React.createElement('p', null, `Success: ${t('success')}`),
+                        React.createElement('p', null, `Error: ${t('error')}`),
+                        React.createElement('p', null, `Loading: ${t('loading')}`),
+                        React.createElement('p', null, `Save: ${t('save')}`),
+                        React.createElement('p', null, `Cancel: ${t('cancel')}`)
+                    )
+                )
+            );
+        };
+
+        ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
+    </script>
+</body>
+</html>

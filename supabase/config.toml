@@ -1,0 +1,57 @@
+# Supabase Configuration for CropIQ
+project_id = "cropiq-prod"
+
+[api]
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+port = 54323
+
+[ingest]
+enabled = false
+
+[storage]
+file_size_limit = "50MiB"
+image_transformation_enabled = true
+
+[auth]
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://localhost:3000", "https://cropiq.app"]
+jwt_expiry = 3600
+refresh_token_rotation_enabled = true
+security_update_password_require_reauthentication = true
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+
+[auth.phone]
+enable_signup = true
+max_frequency = 5s
+
+[auth.external.apple]
+enabled = false
+client_id = ""
+secret = ""
+
+[auth.external.google]
+enabled = true
+client_id = "your-google-client-id"
+secret = "your-google-secret"
+
+[edge_runtime]
+enabled = true
+port = 54324
+inspector_port = 54325
+
+[analytics]
+enabled = false
