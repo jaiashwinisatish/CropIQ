@@ -1,4 +1,4 @@
-#  CropIQ - AI-Powered Smart Farming Assistant
+#  CropIQ - AI-Powered Smart Farming Assistant 
 
 <div align="center">
 
